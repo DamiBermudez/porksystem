@@ -1,0 +1,280 @@
+/*Diseño de mi proyecto*/
+
+:root{
+    
+    --color-fondo: rgba(0, 255, 55, 0.8);
+    --color-fondo-header: rgba(248, 247, 247, 0.801);
+    --color-fondo-main:rgba(40, 161, 15, 0.8);
+    --color-texto:#ffffffdc;
+    --color-texto-secundario:rgba(128, 128, 128, 0.829);
+    --fuente: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    --espacio-letras:0.3rem;
+    --titulos:3rem;
+    --color-boton:rgb(59, 166, 202);
+    --color-boton-hover:rgba(148, 13, 148, 0.658);
+}
+
+/*Garantizo todo el espacio de mi documento*/
+html{
+height: 100%;
+margin: 0;
+padding: 0;
+}
+
+/* maqueto mi body*/
+body{
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: auto 120px;
+    grid-template-rows: 180px auto 40px;
+    gap: 5px;
+    background-color: var(--color-fondo);
+}
+
+/* formateo header, main,aside,footer*/
+header{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end:2 ;
+    
+}
+
+main,aside{
+    grid-row-start: 2;
+    grid-row-end: 3;
+    background-color: var(--color-fondo-header);
+    overflow: auto;  
+}
+
+footer{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end:4 ;
+    background-color: var(--color-fondo-header);
+}
+
+header{
+    border-radius: 5px;
+    display: flex;
+    background-color: var(--color-fondo-header);
+}
+
+
+aside,
+footer {
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+div.contenedor{
+    width: 100%;
+    
+}
+
+header>div.contenedor>div.encabezado{
+    display: flex;
+    width: 100%;
+    height: 120px;
+    align-items: center;
+    justify-content: center;
+}
+
+header>div.contenedor>div.encabezado>h1{   
+    display: flex; 
+    font-family: var(--fuente);
+    font-size: var(--titulos);
+    color: var(--color-texto-secundario); 
+    
+}
+
+header>div.contenedor>div.encabezado>img{   
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+    
+}
+
+header>div.contenedor>nav{
+    
+    display:flex;
+    margin-top: 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+header>div.contenedor>nav>a{
+    text-decoration: none;
+    justify-content: space-between;
+    color: var(--color-texto-secundario);
+    letter-spacing: var(--espacio-letras);
+}
+
+.visitado{
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    letter-spacing: var(--espacio-letras);
+    padding: 2px;
+    border-radius: 5px;
+}
+
+header>div.contenedor>nav>a:hover{
+    background-color: var(--color-texto-secundario);
+    padding: 2px;
+    color: var(--color-texto);
+    border-radius: 5px;
+    letter-spacing: var(--espacio-letras);
+    transform: scale(1.5);
+}
+
+
+aside>ul{
+    margin: 0;
+    padding: 0;
+}
+aside>ul>li{
+list-style: none;
+}
+aside>ul>li>a{
+    text-decoration: none;
+    color: var(--color-texto-secundario);
+    letter-spacing: var(--espacio-letras);
+}
+
+aside>ul>li>a:hover{
+    background-color: var(--color-texto-secundario);
+    padding: 2px;
+    color: var(--color-texto);
+    border-radius: 5px;
+}
+
+footer>small{
+    text-decoration: none;    
+    color: var(--color-texto-secundario);
+    letter-spacing: var(--espacio-letras);
+}
+
+form{
+    font-family: var(--fuente);
+    font-size: 1.2rem;
+    color: var(--color-texto-secundario);
+ }
+
+ .form-wrapper {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en una columna */
+    align-items: center;    /* Centra horizontalmente los elementos */
+    justify-content: center; /* Opcional: centra verticalmente en el contenedor si tiene altura definida */
+    height: 70vh;          /* Ocupa el 70
+ */
+}
+
+.registrar {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos del formulario en una columna */
+    gap: 10px;              /* Espacio entre los elementos del formulario */
+    width: 500px; 
+    border: 1px solid #ccc;   
+           /* Ancho del formulario */
+}
+
+.form-registrar {
+    align-self: center;     /* Centra el botón horizontalmente en el formulario */
+    padding: 10px 20px;     /* Espacio interno del botón */
+    font-size: 16px;        /* Tamaño del texto del botón */
+}
+
+form.registrar label{
+    display: block;
+    width: 30%;
+    margin: 0 auto;
+}
+
+
+form input{
+    width: 100%;
+    padding: 0.3rem;
+    border-style: none;
+    border-bottom-style: dashed;
+    border-width: .5px;
+    border-radius: 5px;
+    /*background-color: var(--color-fondo-main);*/
+    border-color: var(--color-fondo-main);
+    box-shadow: none;
+    cursor:pointer;
+    margin: 0.5rem 0 1rem;
+}
+
+form button {
+    background-color: var(--color-boton);
+    color: var(--color-texto);
+    margin: 0.3rem;
+    border: none;
+    padding: 0.7rem;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color .3s ease;
+    
+    
+}
+
+form button:hover {
+    background-color: var(--color-boton-hover);    
+}
+
+div.div_consultas {
+    display: inline-block;
+    padding-top: 5px;
+    margin-left: 100px;
+}
+
+div.fechas{
+    display: inline-block;
+    padding: 5px;
+}
+
+fieldset{
+    margin-top: 10px;
+    padding: 5px;
+    border-color: var(--color-fondo-main);
+    border-style:dashed;
+    border-width: .5px;
+    border-radius: 12px;
+}
+h3{
+    font-family: var(--fuente);
+    color: var(--color-texto-secundario);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; /* Espacio entre el formulario y la tabla */
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--color-fondo-main);
+    color: var(--color-texto);
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+

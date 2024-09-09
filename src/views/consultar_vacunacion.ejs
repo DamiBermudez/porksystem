@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Damián Bermúdez">
+    <meta name="Description" content="Aplicación web que facilita los procesos administrativos de una explotación porcina">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <title>Consultar Vacunación</title>    
+</head>
+<body>
+   <header>
+    <div class="contenedor">
+        <div class="encabezado">
+            <h1>Bienvenidos a Porksystem</h1>
+            <img src="https://img.freepik.com/fotos-premium/cerdo-aislado_136670-924.jpg" alt="lechon" />
+        </div>
+        
+            <nav>
+            
+                <a href="alimentacion.html" >Alimentación</a>
+                <a href="ceba.html" >Ceba</a>
+                <a href="cliente.html">Cliente</a>
+                <a href="mortalidad.html">Mortalidad</a>     
+                <a href="#" class="visitado">Vacunación</a> 
+                <a href="#">Venta</a> 
+ 
+            
+            </nav>
+        
+    </div>
+   </header>
+   
+   <main> 
+       
+            <fieldset>
+                <!-- consultar por fechas-->
+                <div class="div_consultas">            
+                    <h3>Consultar por Fecha:</h3>
+                    <form action="/consultar_vacunacion/fechas" method="get" class="form_consultas">
+                        
+                        <div class="fechas">
+                            <label for="fecha_alimentacion_uno">Desde:
+                                <input type="date" id="fecha_alimentacion_uno" name="fecha_alimentacion_uno" required>
+                            </label>
+                        </div>
+                        <div class="fechas">
+                            <label for="fecha_alimentacion_dos">Hasta:
+                                <input type="date" id="fecha_alimentacion_dos" name="fecha_alimentacion_dos" required>
+                            </label>
+                        </div>  
+                        <button type="submit">Listar</button>
+                    </form> 
+            </div>
+            <!--Consultar por lote -->
+                    <div class="div_consultas">      
+                        <h3>Consultar por Lote:</h3>
+                        <form action="/consultar_vacunacion/lote" method="get" class="form_consultas">                       
+                            <div class="fechas">
+                                <label for="num_lote">Lote:
+                                    <input type="text" name="num_lote" required>
+                                </label>
+                            </div>  
+                            <button type="submit">Listar</button>
+                        </form>                        
+                    </div>
+            </fieldset>
+              <!-- Mostrar mensajes de error o éxito -->
+    <% if (message) { %>
+        <p><%= message %></p>
+    <% } %>
+    <!-- Tabla para mostrar los resultados -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Fecha</th>
+                <th>Lote</th>
+                <th>Vacuna</th>
+                <th>Cepa</th>
+                
+                <!-- Agrega aquí otras columnas según tu esquema de base de datos -->
+            </tr>
+        </thead>
+        <tbody>
+            <% records.forEach(record => { %>
+                <tr>
+                    <td><%= record.id_vacunacion %></td>
+                    <td><%= record.fecha_vac %></td>
+                    <td><%= record.lote_ceba_id_lote %></td>
+                    <td><%= record.vacuna%></td>
+                    <td><%= record.num_cepa%></td>
+                    
+                                       
+                    <!-- Agrega aquí otras columnas según tu esquema de base de datos -->
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+       
+   </main>
+
+   <aside>
+    <ul>
+        <li><a href="index">Inicio</a></li><br>
+        <li><a href="registrar_vacunacion" >Nuevo Registro</a></li><br>
+        <li><a href="consultar_vacunacion" class="visitado">Consultar Registro</a></li><br>              
+    </ul>        
+</aside>
+
+   <footer>
+    <%- include('templates/footer') %>
+   </footer>
+</body>
+</html>

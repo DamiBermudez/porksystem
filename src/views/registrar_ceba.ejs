@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Damián Bermúdez">
+    <meta name="Description" content="Aplicación web que facilita los procesos administrativos de una explotación porcina">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <title>Registrar Ceba</title>    
+</head>
+<body>
+   <header>
+    <div class="contenedor">
+        <div class="encabezado">
+            <h1>Bienvenidos a Porksystem</h1>
+            <img src="https://img.freepik.com/fotos-premium/cerdo-aislado_136670-924.jpg" alt="lechon" />
+        </div>
+        
+            <nav>
+            
+                <a href="alimentacion">Alimentación</a>
+                <a href="#" class="visitado">Ceba</a>
+                <a href="cliente">Cliente</a>
+                <a href="mortalidad">Mortalidad</a>     
+                <a href="vacunacion">Vacunación</a> 
+                <a href="#">Venta</a> 
+ 
+            
+            </nav>
+        
+    </div>
+   </header>
+   
+   <main>
+    <div class="form-wrapper">
+         <form action="/registrar_ceba/insertar" method="post" class="registrar">
+            
+            <label for="num_lote">Lote:
+                <input type="text" name="num_lote" required>
+            </label>
+            <label for="edad_lote"> Edad (semanas) :
+                <input type="text" name="edad_lote">
+            </label>
+            <label for="cant_animales"> Cantidad :
+                <input type="text" name="cant_animales">
+            </label>
+            <label for="peso_prom"> Peso Promedio :
+                <input type="text" name="peso_prom">
+            </label>
+            <label for="descripcion">Descripción:
+                <input type="text" name="descripcion">
+            </label>
+            <button type="submit" class="form-registrar">Registrar</button>
+         </form>  
+        </div>
+         <!-- Mostrar mensajes de error o éxito -->
+        <% if (message) { %>
+            <p><%= message %></p>
+            <% } %>
+   </main>
+
+   <aside>
+    <ul>
+        <li><a href="index">Inicio</a></li><br>
+        <li><a href="registrar_ceba" class="visitado">Nuevo Registro</a></li><br>
+        <li><a href="consultar_ceba">Consultar Registro</a></li><br>              
+    </ul>        
+</aside>
+
+   <footer>
+    <%- include('templates/footer') %>
+   </footer>
+</body>
+</html>

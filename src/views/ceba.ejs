@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Damián Bermúdez">
+    <meta name="Description" content="Aplicación web que facilita los procesos administrativos de una explotación porcina">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <title>Ceba</title>    
+</head>
+<body>
+   <header>
+    <div class="contenedor">
+        <div class="encabezado">
+            <h1>Bienvenidos a Porksystem</h1>
+            <img src="https://img.freepik.com/fotos-premium/cerdo-aislado_136670-924.jpg" alt="lechon" />
+        </div>
+        
+            <nav>
+            
+                <a href="alimentacion" >Alimentación</a>
+                <a href="#" class="visitado">Ceba</a>
+                <a href="cliente">Cliente</a>
+                <a href="mortalidad">Mortalidad</a>     
+                <a href="vacunacion">Vacunación</a> 
+                <a href="#">Venta</a> 
+            
+            </nav>
+        
+    </div>  
+   </header>
+   
+   <main>
+         contenido Principal  
+   </main>
+
+   <aside>
+    <ul>
+        <li><a href="index">Inicio</a></li><br>
+        <li><a href="registrar_ceba">Nuevo Registro</a></li><br>
+        <li><a href="consultar_Ceba">Consultar Registro</a></li><br>
+        
+    </ul>        
+</aside>
+
+   <footer>
+    <%-include('templates/footer')%>
+   </footer>
+</body>
+</html>
